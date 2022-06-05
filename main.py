@@ -22,7 +22,7 @@ def findMax(a, y, k):
         for j in range(len(a[i]) - 1 - k):
             if abs(a[i + k][j + k]) > m:
                 m = a[i + k][j + k]
-                maxCoordinate = [i + k][j + k]
+                maxCoordinate = [i + k, j + k]
     x = a[k]
     a[k] = a[maxCoordinate[0]]
     a[maxCoordinate[0]] = x
@@ -80,10 +80,12 @@ def main():
     b = [4.21, 6.47, 2.38, 10.48]
     x = gaus(copy.deepcopy(a), b)
     print('x:', x)
+    print('\n')
     ax = multiply(a, x)
     print('Ax:', ax)
+    print('\n')
     r = sub(b, ax)
-    print('r', r)
+    print('r:', r)
 
 if __name__ == '__main__':
     main()
